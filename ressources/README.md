@@ -14,6 +14,7 @@ So this is a small convenience abstraction to expose the functions we need from 
 Requirements
 ------------
 - [nodejs](https://nodejs.org/en/) >= 14
+- ESM importability
 
 We look forward for the native integration of the fetch API then we will require nodejs >18.
 
