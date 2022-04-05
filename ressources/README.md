@@ -1,30 +1,93 @@
-# noname - 
+# thingy-network-base 
 
-# Why?
+# Background
+For every thingy we need network connection. Here we want to have a unified base to build our network interfaces on top.
 
-# What?
+So this is a small convenience abstraction to expose the functions we need from the network:
+
+- postData(url, data)
+- getData(url)
+- getAsset(url)
+- getText(url)
 
 # How?
 Requirements
 ------------
+- [nodejs](https://nodejs.org/en/) >= 14
+
+We look forward for the native integration of the fetch API then we will require nodejs >18.
 
 Installation
 ------------
 
+Current git version:
+```
+npm install -g git+https://github.com/JhonnyJason/thingy-network-base-output.git
+```
+Npm Registry
+```
+npm install -g thingy-network-base
+```
 
 Usage
 -----
+Cherry-pick named import.
+```
+import { postData, getData, getText, getAsset } from "thingy-network-base"
 
+url="https://..."
+data = {...}
+
+response = await postData(url, data)
+result = await getData(url)
+result = await getText(url)
+result = await getAsset(url)
+```
+
+Import all.
+```
+import * as network from "thingy-network-base"
+
+url="https://..."
+data = {...}
+
+
+response = await network.postData(url, data)
+result = await network.getData(url)
+result = await network.getText(url)
+result = await network.getAsset(url)
+```
 
 Current Functionality
 ---------------------
 
+All of our functions return a promise.
+They will throw exceptions on unexpected behaviour and network issues.
+
+## postData(url, data)
+- url - the URL how you would pass it to fetch()
+- JSON data to be sent
+When the Promise resolves we will have the response as JSON.
+
+## getData(url)
+- url - the URL how you would pass it to fetch()
+- Returned Promise resolvesto the result JSON.
+- Expects JSON to be found
+
+## getText(url)
+- url - the URL how you would pass it to fetch()
+- Returned Promise resolves to the result string.
+
+## getAsset(url)
+- url - the URL how you would pass it to fetch()
+- Returned Promise resolves to the objectURL of the downloaded asset-blob.
 
 ---
 
 # Further steps
 
-- ...
+- fix bugs
+- replace node-fetch with native fetch implementation
 
 
 All sorts of inputs are welcome, thanks!
