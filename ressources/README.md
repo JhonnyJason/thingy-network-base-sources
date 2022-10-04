@@ -26,8 +26,10 @@ The options for POST are:
 ```
 
 # Usage
+
 Requirements
 ------------
+
 - [nodejs](https://nodejs.org/en/) >= 18
 - ESM importability
 
@@ -43,7 +45,7 @@ Npm Registry
 npm install -g thingy-network-base
 ```
 
-Usage
+Use
 -----
 Cherry-pick named import.
 ```

@@ -1,6 +1,6 @@
 {
     "name": "thingy-network-base",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Small convenience abstraction around fetch calls.",
     "main": "index.js",
     "scripts": {
@@ -23,6 +23,6 @@
         "url": "https://github.com/JhonnyJason/thingy-network-base/issues"
     },
     "homepage": "https://github.com/JhonnyJason/thingy-network-base-output#readme",
-    "dependencies": { },
+    "dependencies": {},
     "type": "module"
 }
