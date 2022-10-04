@@ -1,6 +1,6 @@
 {
     "name": "thingy-network-base",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Small convenience abstraction around fetch calls.",
     "main": "index.js",
     "scripts": {

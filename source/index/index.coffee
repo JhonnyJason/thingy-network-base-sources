@@ -9,7 +9,7 @@ export postData = (url, data) ->
 
     try
         response = await fetch(url, options)
-        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{response.body}")
+        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{await response.text()}")
         return response.json()
     catch err then throw new Error("Network Error: "+err.message)
 
@@ -17,7 +17,7 @@ export postData = (url, data) ->
 export getData = (url) ->
     try 
         response = await fetch(url)
-        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{response.body}")
+        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{await response.text()}")
         return response.json()
     catch err then throw new Error("Network Error: "+err.message)
 
@@ -26,7 +26,7 @@ export getData = (url) ->
 export getAsset = (url) ->
     try 
         response = await fetch(url)
-        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{response.body}")
+        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{await response.text()}")
         return URL.createObjectURL(await response.blob())
     catch err then throw new Error("Network Error: "+err.message)
 
@@ -34,7 +34,7 @@ export getAsset = (url) ->
 export getText = (url) ->
     try 
         response = await fetch(url)
-        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{response.body}")
+        if !response.ok then throw new Error("Response not ok - status: #{response.status}! body: #{await response.text()}")
         return await response.text()
     catch err then throw new Error("Network Error: "+err.message)
     
